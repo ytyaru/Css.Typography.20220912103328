@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="author" content="ytyaru">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">
+<link rel="icon" href="asset/image/avator.png">
+<!--
+<link rel="stylesheet" href="css/style.css">
+-->
+<style>
+:root {
+    --line-of-chars:35;
+    --line-height:1.5em; /*1.5〜1.75em*/
+    --letter-spacing:0.05em; /*0.05〜0.1em*/
+    --font-size:calc(100vw / (var(--line-of-chars)));
+
+    --column-count:2;/* 現在段組数 localStorage || 1; // 1,2,3,... */
+    --column-gap:1em;
+    --column-rule-width:1px;
+    --column-rule-color:#000000;
+    /*--font-size:calc(100vw / (var(--line-of-chars)));*/
+    /* const fontSize = Math.max(this.minPx(), this.lineOfPx() / (lineOfChars * (1 + this.letterSpacingEm())) - 0.1) */
+    /*--font-size:calc(100vw / (var(--line-of-chars) * (1em + var(--letter-spacing))));*/
+    /*--font-size:calc(100vw / (var(--line-of-chars) * (1 + 0.05)));*/
+    /*--font-size:calc(100vw / (var(--line-of-chars) * 2));*/
+    /*--font-size:calc(100vw / 10);*/
+}
+@media screen and (max-width: 959px) {
+    --line-of-chars:30;
+}
+@media screen and (max-width: 480px) {
+    --line-of-chars:20;
+}
+body {
+    /*font-size: 16px;*/
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    /*background-color: #FF0000;*/
+    column-count: var(--column-count);
+    column-span: none;
+    column-gap: var(--column-gap);
+    column-rule-width: var(--column-rule-width);
+    column-rule-style: solid;
+    column-rule-color: var(--column-rule-color);
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/font-size-4.js"></script>
+<script src="js/main-4.js"></script>
+</head>
+<body>
+    <h1>CSS column-count:2</h1>
+    <table>
+        <tr><th>font-size</th><td id="font-size"></td></tr>
+        <tr><th>--line-of-chars</th><td id="--line-of-chars"></td></tr>
+        <tr><th>innerWidth</th><td id="innerWidth"></td></tr>
+        <tr><th>column-count</th><td id="column-count"></td></tr>
+    </table>
+    <h2></h2>
+    <p>　横幅の表示領域が1280px以上なら画面を縦中央で２分割する。</p>
+    <p>　分割できたのはいいが、分割の仕方に問題がある。期待していたのは左から右に続くこと。でも実際は全体の前半が左、後半が右になってしまった。このせいで文章を読むために必要なスクロール数が一気に増える。</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <footer>
+        <span>© 2021 ytyaru</span>
+        <a title="CC-BY-SA" \
+           href="https://creativecommons.org/licenses/by-sa/3.0/deed.ja"
+           style="text-decoration: none;">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Cc.logo.circle.svg"></img>
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Cc-by_new.svg"></img>
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Cc-sa.svg"></img>
+            <!--<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/CC-BY-SA_icon.svg"></img>-->
+    </a></footer>
+</body>
+</html>
+<!-- https://coliss.com/articles/build-websites/operation/work/html-template-for-web-apps-or-sites.html -->
+<!-- https://coliss.com/articles/build-websites/operation/work/html5-template-for-2018.html -->

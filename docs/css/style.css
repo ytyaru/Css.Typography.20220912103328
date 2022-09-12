@@ -1,0 +1,38 @@
+@charset "utf-8";
+:root {
+    --line-of-chars:35;
+    --line-height:1.5em; /*1.5〜1.75em*/
+    --letter-spacing:0.05em; /*0.05〜0.1em*/
+    --font-size:calc(100vw / (var(--line-of-chars)));
+    /*--font-size:calc(100vw / (var(--line-of-chars)));*/
+    /* const fontSize = Math.max(this.minPx(), this.lineOfPx() / (lineOfChars * (1 + this.letterSpacingEm())) - 0.1) */
+    /*--font-size:calc(100vw / (var(--line-of-chars) * (1em + var(--letter-spacing))));*/
+    /*--font-size:calc(100vw / (var(--line-of-chars) * (1 + 0.05)));*/
+    /*--font-size:calc(100vw / (var(--line-of-chars) * 2));*/
+    /*--font-size:calc(100vw / 10);*/
+}
+@media screen and (max-width: 959px) {
+    --line-of-chars:30;
+}
+@media screen and (max-width: 480px) {
+    --line-of-chars:20;
+}
+body {
+    /*font-size: 16px;*/
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    /*background-color: #FF0000;*/
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    --line-of-chars:40;
+    font-size: calc(100vw / (var(--line-of-chars)));
+}
+img.icon {
+    width: 1em;
+    height: 1em;
+}
